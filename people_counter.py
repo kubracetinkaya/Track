@@ -79,7 +79,7 @@ while True:
 			confidence = detections[0, 0, i, 2]
 			if confidence > args["confidence"]:
 				idx = int(detections[0, 0, i, 1])
-				if CLASSES[idx] != "car":
+				if CLASSES[idx] != "person":
 					continue
 				box = detections[0, 0, i, 3:7] * np.array([W, H, W, H])
 				(startX, startY, endX, endY) = box.astype("int")
